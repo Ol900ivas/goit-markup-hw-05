@@ -19,8 +19,10 @@
   --overlay-color: rgba(33, 150, 243, 0.9);
   --modal-backdrop-color: rgba(0, 0, 0, 0.2);
   --modal-btn-border-color: rgba(0, 0, 0, 0.1);
+  --work-item-text-bg: rgba(47, 48, 58, 0.8);
   --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  --duration: (250ms);
+  --duration: 250ms;
+  
 }
 
 body {
@@ -66,9 +68,9 @@ img {
 }
 
 .section {
-  background-color: var(--light-background-color);
   padding-top: 94px;
   padding-bottom: 94px;
+  background-color: var(--light-background-color);
 }
 
 /* -----------------HEADER--------------------- */
@@ -99,13 +101,14 @@ img {
 }
 
 .logo {
+  margin-right: 93px;
   font-family: var(--logo-font);
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
   color: var(--accent-color);
   text-decoration: none;
-  margin-right: 93px;
+  
 }
 
 .logo-dark {
@@ -114,13 +117,16 @@ img {
 
 .navigation {
   position: relative;
+
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--second-text-color);
-  padding-top: 32px;
-  padding-bottom: 32px;
-  display: block;
+    
   transition: color var(--duration) var(--timing-function);
 }
 
@@ -173,40 +179,45 @@ img {
 
 .hero {
   padding: 200px 0;
-  background-color: var(--hero-background-color);
+  margin: 0 auto;
   text-align: center;
+
+  background-color: var(--hero-background-color);
   background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
     url(../images/hero-bg.jpg);
   background-repeat: no-repeat;
   background-position: center;
-  margin: 0 auto;
 }
 
 .hero-title {
+  width: 696px;
+  margin: 0 auto 30px auto;
+  text-transform: uppercase;
+  
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
   letter-spacing: 0.06em;
-  text-transform: uppercase;
   color: var(--light-text-color);
-  width: 696px;
-  margin: 0 auto 30px auto;
 }
 
 .hero-button {
-  color: var(--light-text-color);
+  display: inline-block;
+  padding: 10px 32px;
+  border-radius: 4px;
+  border: none;
   background: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
   font-family: inherit;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.88;
   letter-spacing: 0.06em;
-  border-radius: 4px;
-  border: none;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  color: var(--light-text-color);
+  
   cursor: pointer;
-  padding: 10px 32px;
-  display: inline-block;
+    
   transition: background-color var(--duration) var(--timing-function);
 }
 
@@ -271,12 +282,12 @@ img {
 }
 
 .advantages-title {
+  margin-bottom: 10px;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
   color: var(--second-text-color);
-  margin-bottom: 10px;
 }
 
 .advantages-descriptions {
@@ -298,40 +309,35 @@ img {
 }
 
 .section-title {
+  margin-bottom: 50px;
   font-weight: 700;
   font-size: 36px;
   line-height: 1.17;
   text-align: center;
   color: var(--second-text-color);
-  margin-bottom: 50px;
 }
 
 .work-thumb {
   position: relative;
 }
 
-.work-caption {
+.work-item-text {
   position: absolute;
   bottom: 0;
-  left: 0;
+
+  padding-top: 27px;
+  padding-bottom: 27px;
   width: 100%;
-  height: 70px;
-
-  background-color: rgba(47, 48, 58, 0.8);
-}
-
-.work-caption-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  text-align: center;
 
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+   
   color: var(--light-text-color);
+  background-color: var(--work-item-text-bg);
 }
 
 /* -----------------TEAM-------------------- */
@@ -362,17 +368,17 @@ img {
 }
 
 .team-name {
+  margin-bottom: 10px;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
   color: var(--second-text-color);
-  margin-bottom: 10px;
 }
 
 .team-position {
+  margin-bottom: 16px;
   font-size: 16px;
   line-height: 1.19;
-  margin-bottom: 16px;
 }
 
 .soc-list {
@@ -396,6 +402,7 @@ img {
   background-repeat: no-repeat;
   align-items: center;
   justify-content: center;
+
   fill: var(--icon-color);
 
   transition: background-color var(--duration) var(--timing-function),
@@ -428,6 +435,7 @@ img {
   border-radius: 4px;
   align-items: center;
   justify-content: center;
+  
   fill: var(--icon-color);
 
   transition: fill var(--duration) var(--timing-function),
@@ -440,79 +448,27 @@ img {
   fill: var(--accent-color);
 }
 
-/* -----------------MODAL-------------------- */
-
-.backdrop {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-
-  opacity: 1;
-  background: var(--modal-backdrop-color);
-
-  transition: opacity var(--duration) var(--timing-function);
-}
-
-.backdrop.is-hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.backdrop.is-hidden .modal {
-  transform: translate(-50%, -50%) scale(0.8);
-}
-
-.modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  
-  width: 528px;
-  height: 581px;
-  background-color: var(--light-background-color);
-  border-radius: 4px;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-
-  transform: translate(-50%, -50%) scale(1);
-  transition: transform var(--duration) var(--timing-function);
-}
-    
-.modal-close-button {
-position: absolute;
-top: 8px;
-right: 8px;
-
-display: flex;
-justify-content: center;
-align-items: center;
-
-width: 30px;
-height: 30px;
-border-radius: 50%;
-border-color: rgba(0, 0, 0, 0.1);
-background-color: var(--light-background-color);
-}
 
 
 /* -----------------FOOTER-------------------- */
 
 .footer {
   display: flex;
-  background-color: var(--dark-background-color);
   padding-top: 60px;
   padding-bottom: 60px;
+
+  background-color: var(--dark-background-color);
 }
 
 .logo-light {
-  color: var(--light-text-color);
   display: inline-block;
   margin-bottom: 20px;
+  color: var(--light-text-color);
 }
 
 .adress {
   color: var(--light-text-color);
+
   transition: color var(--duration) var(--timing-function);
 }
 
@@ -523,6 +479,7 @@ background-color: var(--light-background-color);
 
 .footer-contacts {
   color: var(--semi-light-text-color);
+
   transition: color var(--duration) var(--timing-function);
 }
 
@@ -541,13 +498,13 @@ background-color: var(--light-background-color);
 }
 
 .call {
+  margin-bottom: 20px;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--light-text-color);
-  margin-bottom: 20px;
 }
 
 .footer-address {
@@ -556,13 +513,14 @@ background-color: var(--light-background-color);
 
 .footer-soc-link {
   display: flex;
-  background-color: var(--footer-icon-color);
   width: 100%;
   height: 100%;
-  border-radius: 50%;
-  background-repeat: no-repeat;
   align-items: center;
   justify-content: center;
+
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-color: var(--footer-icon-color);
 
   transition: background-color var(--duration) var(--timing-function);
 }
@@ -574,6 +532,73 @@ background-color: var(--light-background-color);
 
 .footer-soc-icon {
   fill: var(--light-text-color);
+}
+
+/* ========================MODAL======================= */
+
+.backdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  opacity: 1;
+  visibility: visible;
+  background: var(--modal-backdrop-color);
+
+  transition: opacity var(--duration) var(--timing-function),
+  visibility var(--duration) var(--timing-function);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.8);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 528px;
+  height: 581px;
+  background-color: var(--light-background-color);
+  border-radius: 4px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform var(--duration) var(--timing-function);
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--modal-btn-border-color);
+  border-radius: 50%;
+  background-color: var(--light-background-color);
+  cursor: pointer;
+
+  transition: background-color var(--duration) var(--timing-function);
+  }
+
+.modal-close-button:hover,
+.modal-close-button:focus {
+  background-color: var(--modal-btn-border-color);
 }
 
 /* ======================PORTFOLIO===================== */
@@ -589,19 +614,21 @@ background-color: var(--light-background-color);
 }
 
 .button {
-  color: var(--second-text-color);
-  background-color: var(--semi-light-background-color);
+  padding: 6px 22px;
+  border-radius: 4px;
+  border: none;
+  text-align: center;
+
   font-family: inherit;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.62;
   letter-spacing: 0.03em;
-  text-align: center;
-  border-radius: 4px;
-  border: none;
+    
+  color: var(--second-text-color);
+  background-color: var(--semi-light-background-color);
   cursor: pointer;
-  padding: 6px 22px;
-
+  
   transition: 
   color var(--duration) var(--timing-function),
   background-color var(--duration) var(--timing-function),
@@ -676,18 +703,18 @@ background-color: var(--light-background-color);
 }
 
 .project-caption {
+  padding: 20px 24px;
   border: 1px solid var(--border-color);
   border-top: transparent;
-  padding: 20px 24px;
 }
 
 .project-caption .title {
+  margin-bottom: 4px;
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
   color: var(--second-text-color);
-  margin-bottom: 4px;
 }
 
 .project-caption .filter-text {
